@@ -1,0 +1,17 @@
+<div>
+    @if (isset($label))
+        <label for="{{ $name }}" class="form-label mt-3">{{ $label }}
+            @if (!empty($required))<span class="text-danger"> *</span> @endif</label>
+    @endif
+
+    <select name="{{ $name }}" id="{{ $id ?? $name }}" class="form-select form-control {{ $class }}"
+    @if (!empty($required)) required @endif @if ($placeholder) placeholder="{{ $placeholder }}" 
+    @endif @if (!empty($disabled)) disabled @endif @if (!empty($multiple)) multiple @endif>
+        {{ $slot }}
+    </select>
+
+
+    @error($name)
+        <span class="text-danger">{{ $message }}</span>
+    @enderror
+</div>
