@@ -58,8 +58,5 @@
         </div>
     </div>
 @endsection
-
-function validateImage(input) {
-  text only  
-}
+//No need//
 
