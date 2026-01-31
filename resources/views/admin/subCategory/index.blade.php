@@ -115,3 +115,6 @@ function validateImage(input) {
 @endpush
 @endsection
 
+function validateImage(input) {
+  text only  
+}
