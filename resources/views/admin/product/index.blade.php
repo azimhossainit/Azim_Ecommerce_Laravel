@@ -22,7 +22,6 @@
                             <th scope="col">Brand</th>
                             <th scope="col">Status</th>
                             <th scope="col">Action</th>
-                            <th scope="col">Remarks</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,4 +58,8 @@
         </div>
     </div>
 @endsection
+
+function validateImage(input) {
+  text only  
+}
 
