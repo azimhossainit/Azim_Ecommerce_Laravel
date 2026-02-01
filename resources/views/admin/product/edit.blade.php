@@ -122,9 +122,10 @@
 
                     <div class="sectionCard mb-5">
                      <span class="sectionTitle">Product Images</span>
-
                     <div class="row mt-3">
+
                         <div class="col-md-12">
+                        <p>Product Thumbnail</p>
                         <label for="thumbnail">
                         <img src="{{ asset('thumbnail.webp') }}" alt="" class="img-thumbnail"
                         id="thumbnail_preview" width="140" height="140">
@@ -137,7 +138,7 @@
                             @enderror
                         </div>
                         <div class="col-md-12 mt-3">
-                            <p>Upload Image</p>
+                            <p>Product Gallery</p>
                             <div class="upload__box">
                                 <div class="upload__btn-box">
                                     <label class="upload__btn" for="upload">
@@ -147,13 +148,22 @@
                                 </div>
 
                                 <input type="file" name="images[]" data-max_length="20" multiple
-                                    class="upload__inputfile d-none" id="upload">
+                                class="upload__inputfile d-none" id="upload">
 
-                                <div class="upload__img-wrap"></div>
+                                <div class="upload__img-wrap">
+                                    @foreach ($product->galleries ?? [] as $image)
+                                        <div class='upload__img-box'>
+                                            <div class='img-bg'
+                                                style='background-image:url({{ Storage::url($image['src']) }})'
+                                                data-file='{{ $image['name'] }}' data-id='{{ $image['id'] }}'>
+                                                <div class='upload__img-close deleteProductImage'></div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="my-4 d-flex justify-content-end align-items-center gap-2">
@@ -306,24 +316,50 @@
         }
         this.files = dt.files;
     });
-    // ডিলিট ফাংশন
-    $('body').on('click', '.upload__img-close', function() {
-        let fileName = $(this).parent().data('file');
+    
+        // delete image
+        $('body').on('click', '.upload__img-close', function() {
+        let $btn = $(this);
+        let fileName = $btn.parent().data('file');
+        let id = $btn.parent().data('id');
 
-        for (let i = 0; i < dt.items.length; i++) {
-            if (dt.items[i].getAsFile().name === fileName) {
-                dt.items.remove(i);
-                break;
-            }
+            if (!confirm('Are you sure you want to delete this image?')) return;
+            if (id) {
+                const url = '{{ route('product.deleteImage', ':id') }}'.replace(':id', id);
+                $.ajax({
+                 url: url,
+                type: 'DELETE',
+                headers: {
+                        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                        },
+                        success: function() {
+                            removeFromDT();
+                        },
+                        error: function() {
+                            alert('Something went wrong');
+                            return;
+                        }
+                    });
+
+                    return;
+                }
+                removeFromDT();
+                function removeFromDT() {
+                    for (let i = 0; i < dt.items.length; i++) {
+                        if (dt.items[i].getAsFile().name === fileName) {
+                            dt.items.remove(i);
+                            break;
+                        }
+                    }
+                    document.querySelector('.upload__inputfile').files = dt.files;
+                    $btn.closest('.upload__img-box').remove();
+                }
+            });
         }
-        document.querySelector('.upload__inputfile').files = dt.files;
-        $(this).closest('.upload__img-box').remove();
-    });
-    }
-    $(document).ready(function() {
-        ImgUpload();
-        $('.selectTags').select2();
-    });
+        $(document).ready(function() {
+            ImgUpload();
+            $('.selectTags').select2();
+        });
     </script>
     <script>
 
