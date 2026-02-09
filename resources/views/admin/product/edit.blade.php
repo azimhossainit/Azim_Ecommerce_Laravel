@@ -361,7 +361,6 @@
         });
     </script>
     <script>
-
     function validateImage(input) {
     const file = input.files[0];
     const errorMessage = document.getElementById('imageError');
@@ -381,7 +380,7 @@
     }
 }     
     </script>
-        @endpush
+    @endpush
 
 
         

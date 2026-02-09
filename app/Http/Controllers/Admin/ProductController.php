@@ -68,7 +68,6 @@ class ProductController extends Controller
         ProductRepository::updateByRequest($request, $product);
 
         return to_route('product.index')->withSuccess('Product updated successfully!');
-        
-    }
+  }
 }
 // dd($request->all()); 

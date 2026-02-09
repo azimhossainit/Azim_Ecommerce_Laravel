@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Repositories;
-
 use App\Models\Product;
 use App\Models\ProductDetails;
 use Arafat\LaravelRepository\Repository;
@@ -16,7 +15,6 @@ class ProductRepository extends Repository
     {
         return Product::class;
     }
-
     public static function storeByRequest(Request $request): Product
     {
         $thumbnail = null;
@@ -28,7 +26,6 @@ class ProductRepository extends Repository
                 'image'
             );
         }
-
         // ✅ FIX: null safe media_id
         $product = self::create([
             'name'      => $request->name,
@@ -38,7 +35,6 @@ class ProductRepository extends Repository
             'discount'  => 0,
             'media_id'  => $thumbnail?->id,
         ]);
-
         ProductDetails::create([
             'product_id'        => $product->id,
             'category_id'       => $request->category,
@@ -48,7 +44,6 @@ class ProductRepository extends Repository
             'description'       => $request->description,
             'additional_info'   => $request->additional_information,
         ]);
-
         // ✅ Tags sync
         if ($request->filled('tags')) {
             $product->tags()->sync($request->tags);
@@ -62,15 +57,19 @@ class ProductRepository extends Repository
                 $mediaIds[] = $media->id;
             }
         }
+        // ✅ Inventory
+        if ($mediaIds > 0) {
+        $product->galleries()->sync($mediaIds);
+       }
 
+       return $product;
+    }
         // ✅ FIX: correct array check
         if (count($mediaIds) > 0) {
             $product->galleries()->sync($mediaIds);
         }
-
         return $product;
     }
-
     public function discountPercentage($byPrice, $selPrice)
     {
         // ✅ FIX: division by zero safe
@@ -80,7 +79,6 @@ class ProductRepository extends Repository
 
         return (($byPrice - $selPrice) / $byPrice) * 100;
     }
-
     public static function updateByRequest(Request $request, Product $product): Product
     {
         $media = $product->media;
@@ -110,7 +108,6 @@ class ProductRepository extends Repository
             'by_price' => $request->buying_price,
             'media_id' => $media?->id,
         ]);
-
         $product->details->update([
             'category_id'       => $request->category,
             'sub_category_id'   => $request->sub_category,
@@ -119,14 +116,11 @@ class ProductRepository extends Repository
             'description'       => $request->description,
             'additional_info'   => $request->additional_information,
         ]);
-
         if ($request->filled('tags')) {
             $product->tags()->sync($request->tags);
         }
-
         return $product;
     }
-
     public static function ProductGalleryStoreOrUpdate(Request $request, int $id): Product
     {
         // ✅ FIX: safe find
@@ -139,11 +133,9 @@ class ProductRepository extends Repository
                 $mediaIds[] = $media->id;
             }
         }
-
         if (count($mediaIds) > 0) {
             $product->galleries()->sync($mediaIds);
         }
-
         return $product;
     }
 }
