@@ -58,17 +58,11 @@ class ProductRepository extends Repository
             }
         }
         // ✅ Inventory
-        if ($mediaIds > 0) {
+      if ($mediaIds > 0) {
         $product->galleries()->sync($mediaIds);
        }
 
        return $product;
-    }
-        // ✅ FIX: correct array check
-        if (count($mediaIds) > 0) {
-            $product->galleries()->sync($mediaIds);
-        }
-        return $product;
     }
     public function discountPercentage($byPrice, $selPrice)
     {
@@ -138,4 +132,4 @@ class ProductRepository extends Repository
         }
         return $product;
     }
-}
+    }

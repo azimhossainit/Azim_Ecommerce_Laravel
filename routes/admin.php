@@ -10,6 +10,9 @@ use App\Http\Controllers\Admin\SizeController;
 use App\Http\Controllers\Admin\TagController;
 
 Route::prefix('admin')->group(function () {
+        Route::controller(DashboardController::class)->group(function () {
+        Route::get('/', 'index')->name('admin.root');
+    });
     // category routes
     Route::controller(CategoryController::class)->group(function () {
         Route::get('/categories', 'index')->name('category.index');
