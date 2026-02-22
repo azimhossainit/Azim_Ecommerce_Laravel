@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('root');
+    Route::get('/about', 'about')->name('about');
+    Route::get('/shop', 'shop')->name('shop');
+    Route::get('/faq', 'faq')->name('faq');
+    Route::get('/contact', 'contact')->name('contact');
 });
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'login')->name('login');

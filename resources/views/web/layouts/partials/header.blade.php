@@ -49,8 +49,8 @@
                     <div class="row align-items-center">
                         <div class="col-lg-2">
                             <div class="navbar-header">
-                                <a class="navbar-brand" href="index.html"><img src="{{ asset('web/assets/images/logo.svg')}}"
-                                        alt="logo"></a>
+                            <a class="navbar-brand" href="{{ route('root') }}"><img src="{{ asset('web/assets/images/logo.svg') }}" 
+                            alt="logo"></a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-12">
@@ -272,16 +272,16 @@
                                     <button class="menu-close"><i class="ti-close"></i></button>
                                     <ul class="nav navbar-nav mb-2 mb-lg-0">
                                         <li class="menu-item-has-children">
-                                            <a href="#">Home</a>
+                                        <a href="{{ route('root') }}">Home</a>
                                         </li>
-                                        <li><a href="about.html">About</a></li>
+                                         <li><a href="{{ route('about') }}">About</a></li>
+                                         <li class="menu-item-has-children">
+                                        <a href="{{ route('shop') }}">Shop</a>
+                                        </li>
                                         <li class="menu-item-has-children">
-                                            <a href="#">Shop</a>
+                                            <a href="{{ route('faq') }}">FAQ</a>
                                         </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">FAQ</a>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="{{ route('contact') }}">Contact</a></li>
                                     </ul>
 
                                 </div><!-- end of nav-collapse -->
