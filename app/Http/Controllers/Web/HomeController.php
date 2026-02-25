@@ -27,4 +27,12 @@ class HomeController extends Controller
     {
        return view('web.contact');
     }
+    public function recentlyView()
+    {
+      return view('web.recently-view');
+    }
+     public function register()
+    {
+      return view('auth.register');
+    }
 }

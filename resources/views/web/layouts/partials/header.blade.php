@@ -81,7 +81,7 @@
                                 <ul>
                                     <li><a href="compare.html"><i class="fi flaticon-right-and-left"></i><span>Compare</span></a>
                                     </li>
-                                    <li><a href="login.html"><i class="fi flaticon-user-profile"></i><span>Login</span></a></li>
+                                    <li><a href="{{ route('login') }}"><i class="fi flaticon-user-profile"></i><span>Login</span></a></li>
                                     <li>
                                         <div class="header-wishlist-form-wrapper">
                                             <button class="wishlist-toggle-btn"> <i class="fi flaticon-heart"></i>
@@ -288,7 +288,8 @@
                             </div>
                             <div class="col-lg-2 col-md-1 col-1">
                                 <div class="header-right">
-                                    <a href="recent-view.html" class="recent-btn"><i class="fi flaticon-refresh"></i> 
+                                    <a href="{{ route('recentlyView') }}" class="recent-btn"><i
+                                     class="fi flaticon-refresh"></i> 
                                         <span>Recently Viewed</span>
                                     </a>
                                 </div>

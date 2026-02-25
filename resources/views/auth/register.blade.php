@@ -1,7 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from wpocean.com/html/tf/themart/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Jun 2023 08:56:28 GMT -->
+
+<!-- Mirrored from wpocean.com/html/tf/themart/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Jun 2023 08:56:41 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,65 +52,58 @@
                         <form class="wpo-accountWrapper" action="#">
                             <div class="wpo-accountInfo">
                                 <div class="wpo-accountInfoHeader">
-                                    <a href="{{ route('root') }}"><img 
-                                    src="{{ asset('web/assets/images/logo-2.svg') }}" alt=""></a>
-                                    <a class="wpo-accountBtn" href="{{ route('register') }}">
-                                        <span class="">Create Account</span>
+                                    <a href="{{ route('root') }}"><img src="{{ asset('web/assets/images/logo-2.svg') }}" alt=""></a>
+                                    <a class="wpo-accountBtn" href="{{ route('login') }}">
+                                        <span class="">Log in</span>
                                     </a>
                                 </div>
                                 <div class="image">
                                     <img src="{{ asset('web/assets/images/login.svg') }}" alt="">
                                 </div>
                                 <div class="back-home">
-                                    <a class="wpo-accountBtn" href="index.html">
+                                    <a class="wpo-accountBtn" href="{{ route('root') }}">
                                         <span class="">Back To Home</span>
                                     </a>
                                 </div>
                             </div>
                             <div class="wpo-accountForm form-style">
                                 <div class="fromTitle">
-                                    <h2>Login</h2>
+                                    <h2>Signup</h2>
                                     <p>Sign into your pages account</p>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-12">
+                                        <label for="name">Full Name</label>
+                                        <input type="text" id="name" name="name" placeholder="Your name here..">
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-12">
                                         <label>Email</label>
-                                        <input type="text" id="email" name="email" placeholder="demo@gmail.com">
+                                        <input type="text" id="email" name="email" placeholder="Your email here..">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input class="pwd6" type="password" placeholder="" value="123456"
-                                                name="pass">
+                                            <input class="pwd2" type="password" placeholder="Your password here.." value="sfsg" name="pass">
                                             <span class="input-group-btn">
-                                                <button class="btn btn-default reveal6" type="button"><i
-                                                        class="ti-eye"></i></button>
+                                                <button class="btn btn-default reveal3" type="button"><i class="ti-eye"></i></button>
                                             </span>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-12">
-                                        <div class="check-box-wrap">
-                                            
-                                            <div class="forget-btn">
-                                                <a href="forgot.html">Forgot Password?</a>
-                                            </div>
+                                        <div class="form-group">
+                                            <label>Confirm Password</label>
+                                            <input class="pwd3" type="password" placeholder="Your password here.." value="ssres" name="pass">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default reveal2" type="button"><i class="ti-eye"></i></button>
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-12">
-                                        <button type="submit" class="wpo-accountBtn">Login</button>
+                                        <button type="submit" class="wpo-accountBtn">Signup</button>
                                     </div>
                                 </div>
-                                <h4 class="or"><span>OR</span></h4>
-                                <ul class="wpo-socialLoginBtn">
-                                    <li><button class="bg-danger" tabindex="0" type="button"><span><i
-                                                    class="ti-google"></i></span></button></li>
-                                    <li>
-                                        <button class="bg-secondary" tabindex="0" type="button"><span><i
-                                                    class="ti-github"></i></span></button>
-                                    </li>
-                                </ul>
-                                <p class="subText">Don't have an account? <a href="register.html">Create free
-                                        account</a></p>
+                                
+                                <p class="subText">Sign into your pages account <a href="{{ route('login') }}">Login</a></p>
                             </div>
                         </form>
                     </div>
@@ -131,14 +126,7 @@
     <!-- Custom script for this template -->
     <script src="{{ asset('web/assets/js/script.js') }}"></script>
 </body>
-<!-- Mirrored from wpocean.com/html/tf/themart/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Jun 2023 08:56:29 GMT -->
+
+
+<!-- Mirrored from wpocean.com/html/tf/themart/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Jun 2023 08:56:41 GMT -->
 </html>
-
-
-
-
-
-
-
-
-

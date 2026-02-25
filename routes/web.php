@@ -23,6 +23,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/shop', 'shop')->name('shop');
     Route::get('/faq', 'faq')->name('faq');
     Route::get('/contact', 'contact')->name('contact');
+    Route::get('/recently-view', 'recentlyView')->name('recentlyView');
 });
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'login')->name('login');

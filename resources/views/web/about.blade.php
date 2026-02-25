@@ -8,7 +8,7 @@
                     <div class="col col-xs-12">
                         <div class="wpo-breadcumb-wrap">
                             <ol class="wpo-breadcumb-wrap">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="{{ route('root') }}">Home</a></li>
                                 <li>About Us</li>
                             </ol>
                         </div>
@@ -25,7 +25,8 @@
                     <div class="col-lg-6 col-md-12 col-12">
                         <div class="wpo-about-wrap">
                             <div class="wpo-about-img">
-                                <img src="assets/images/about.jpg" alt="">
+                                <img src="{{ asset('web/assets/images/about.jpg') }}" alt="">
+                                <img src="{{ asset('web/assets/images/about.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -56,7 +57,7 @@
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="service-item">
                                 <div class="service-item-img">
-                                    <img src="assets/images/service/1.png" alt="">
+                                    <img src="{{ asset('web/assets/images/service/1.png') }}" alt="">
                                 </div>
                                 <div class="service-item-text">
                                     <h2>Free Shipping</h2>
@@ -67,7 +68,7 @@
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="service-item">
                                 <div class="service-item-img">
-                                    <img src="assets/images/service/2.png" alt="">
+                                    <img src="{{ asset('web/assets/images/service/2.png') }}" alt="">
                                 </div>
                                 <div class="service-item-text">
                                     <h2>24 X 7 Service</h2>
@@ -78,7 +79,7 @@
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="service-item">
                                 <div class="service-item-img">
-                                    <img src="assets/images/service/3.png" alt="">
+                                    <img src="{{ asset('web/assets/images/service/3.png') }}" alt="">
                                 </div>
                                 <div class="service-item-text">
                                     <h2>Festival Offer</h2>
@@ -111,9 +112,9 @@
                             <div class="portfolio-grids gallery-container clearfix">
                                 <div class="grid">
                                     <div class="img-holder">
-                                        <a href="assets/images/portfolio/1.jpg" class="fancybox"
+                                        <a href="{{ asset('web/assets/images/portfolio/1.jpg') }}" class="fancybox"
                                             data-fancybox-group="gall-1">
-                                            <img src="assets/images/portfolio/1.jpg" alt class="img img-responsive">
+                                            <img src="{{ asset('web/assets/images/portfolio/1.jpg') }}" alt class="img img-responsive">
                                             <div class="hover-content">
                                                 <i class="fi flaticon-eye"></i>
                                             </div>
@@ -122,9 +123,9 @@
                                 </div>
                                 <div class="grid">
                                     <div class="img-holder">
-                                        <a href="assets/images/portfolio/2.jpg" class="fancybox"
+                                        <a href="{{ asset('web/assets/images/portfolio/2.jpg') }}" class="fancybox"
                                             data-fancybox-group="gall-1">
-                                            <img src="assets/images/portfolio/2.jpg" alt class="img img-responsive">
+                                            <img src="{{ asset('web/assets/images/portfolio/2.jpg') }}" alt class="img img-responsive">
                                             <div class="hover-content">
                                                 <i class="fi flaticon-eye"></i>
                                             </div>
@@ -133,9 +134,9 @@
                                 </div>
                                 <div class="grid">
                                     <div class="img-holder">
-                                        <a href="assets/images/portfolio/4.jpg" class="fancybox"
+                                        <a href="{{ asset('web/assets/images/portfolio/4.jpg') }}" class="fancybox"
                                             data-fancybox-group="gall-1">
-                                            <img src="assets/images/portfolio/4.jpg" alt class="img img-responsive">
+                                            <img src="{{ asset('web/assets/images/portfolio/4.jpg') }}" alt class="img img-responsive">
                                             <div class="hover-content">
                                                 <i class="fi flaticon-eye"></i>
                                             </div>
@@ -144,9 +145,9 @@
                                 </div>
                                 <div class="grid">
                                     <div class="img-holder">
-                                        <a href="assets/images/portfolio/3.jpg" class="fancybox"
+                                        <a href="{{ asset('web/assets/images/portfolio/3.jpg') }}" class="fancybox"
                                             data-fancybox-group="gall-1">
-                                            <img src="assets/images/portfolio/3.jpg" alt class="img img-responsive">
+                                            <img src="{{ asset('web/assets/images/portfolio/3.jpg') }}" alt class="img img-responsive">
                                             <div class="hover-content">
                                                 <i class="fi flaticon-eye"></i>
                                             </div>
