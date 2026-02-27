@@ -24,6 +24,9 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/faq', 'faq')->name('faq');
     Route::get('/contact', 'contact')->name('contact');
     Route::get('/recently-view', 'recentlyView')->name('recentlyView');
+    Route::get('/compare', 'compare')->name('compare');
+    Route::get('/product', 'product')->name('product');
+    Route::get('/product-single/{slug}', 'singleProduct')->name('singleProduct');
 });
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'login')->name('login');

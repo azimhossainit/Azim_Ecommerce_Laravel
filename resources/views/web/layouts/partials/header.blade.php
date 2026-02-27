@@ -79,7 +79,7 @@
                         <div class="col-lg-4 col-12">
                             <div class="middle-right">
                                 <ul>
-                                    <li><a href="compare.html"><i class="fi flaticon-right-and-left"></i><span>Compare</span></a>
+                                    <li><a href="{{ route('compare') }}"><i class="fi flaticon-right-and-left"></i><span>Compare</span></a>
                                     </li>
                                     <li><a href="{{ route('login') }}"><i class="fi flaticon-user-profile"></i><span>Login</span></a></li>
                                     <li>
@@ -91,10 +91,10 @@
                                                 <div class="mini-cart-items">
                                                     <div class="mini-cart-item clearfix">
                                                         <div class="mini-cart-item-image">
-                                                            <a href="product.html"><img src="{{ asset('web/assets/images/cart/img-1.jpg')}}" alt></a>
+                                                            <a href="{{ route('shop') }}"><img src="{{ asset('web/assets/images/cart/img-1.jpg')}}" alt></a>
                                                         </div>
                                                         <div class="mini-cart-item-des">
-                                                            <a href="product.html">Stylish Pink Coat</a>
+                                                            <a href="{{ route('shop') }}">Stylish Pink Coat</a>
                                                             <span class="mini-cart-item-price">$150</span>
                                                             <span class="mini-cart-item-quantity"><a href="#"><i
                                                                         class="ti-close"></i></a></span>
@@ -102,12 +102,12 @@
                                                     </div>
                                                     <div class="mini-cart-item clearfix">
                                                         <div class="mini-cart-item-image">
-                                                            <a href="product.html"><img
+                                                            <a href="{{ route('shop') }}"><img
                                                                     src="{{ asset('web/assets/images/cart/img-2.jpg')}}"
                                                                     alt></a>
                                                         </div>
                                                         <div class="mini-cart-item-des">
-                                                            <a href="product.html">Blue Bag</a>
+                                                            <a href="{{ route('shop') }}">Blue Bag</a>
                                                             <span class="mini-cart-item-price">$120</span>
                                                             <span class="mini-cart-item-quantity"><a href="#"><i
                                                                         class="ti-close"></i></a></span>
@@ -115,12 +115,12 @@
                                                     </div>
                                                     <div class="mini-cart-item clearfix">
                                                         <div class="mini-cart-item-image">
-                                                            <a href="product.html"><img
+                                                            <a href="{{ route('shop') }}"><img
                                                                     src="{{ asset('web/assets/images/cart/img-3.jpg')}}"
                                                                     alt></a>
                                                         </div>
                                                         <div class="mini-cart-item-des">
-                                                            <a href="product.html">Kids Blue Shoes</a>
+                                                            <a href="{{ route('shop') }}">Kids Blue Shoes</a>
                                                             <span class="mini-cart-item-price">$120</span>
                                                             <span class="mini-cart-item-quantity"><a href="#"><i
                                                                         class="ti-close"></i></a></span>
@@ -144,10 +144,10 @@
                                                 <div class="mini-cart-items">
                                                     <div class="mini-cart-item clearfix">
                                                         <div class="mini-cart-item-image">
-                                                            <a href="product.html"><img src="{{ asset('web/assets/images/cart/img-1.jpg')}}" alt></a>
+                                                            <a href="{{ route('shop') }}"><img src="{{ asset('web/assets/images/cart/img-1.jpg')}}" alt></a>
                                                         </div>
                                                         <div class="mini-cart-item-des">
-                                                            <a href="product.html">Stylish Pink Coat</a>
+                                                            <a href="{{ route('shop') }}">Stylish Pink Coat</a>
                                                             <span class="mini-cart-item-price">$150 x 1</span>
                                                             <span class="mini-cart-item-quantity"><a href="#"><i
                                                                         class="ti-close"></i></a></span>
@@ -155,12 +155,12 @@
                                                     </div>
                                                     <div class="mini-cart-item clearfix">
                                                         <div class="mini-cart-item-image">
-                                                            <a href="product.html"><img
+                                                            <a href="{{ route('shop') }}"><img
                                                                     src="{{ asset('web/assets/images/cart/img-2.jpg')}}"
                                                                     alt></a>
                                                         </div>
                                                         <div class="mini-cart-item-des">
-                                                            <a href="product.html">Blue Bag</a>
+                                                            <a href="{{ route('shop') }}">Blue Bag</a>
                                                             <span class="mini-cart-item-price">$120 x 2</span>
                                                             <span class="mini-cart-item-quantity"><a href="#"><i
                                                                         class="ti-close"></i></a></span>
@@ -210,7 +210,7 @@
                                     <div class="mini-shop-item">
                                         <ul id="metis-menu">
                                             <li>
-                                                <a href="product.html">Feature Product</a>
+                                                <a href="{{ route('shop') }}">Feature Product</a>
                                             </li>
                                             <li class="header-catagory-item">
                                                 <a class="menu-down-arrow" href="#">Perfunsee & Cologne</a>
@@ -222,7 +222,7 @@
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="product.html">Best Sellers</a>
+                                                <a href="{{ route('shop') }}">Best Sellers</a>
                                             </li>
                                             <li class="header-catagory-item">
                                                 <a class="menu-down-arrow" href="#">Men Fashion</a>
@@ -234,7 +234,7 @@
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="product.html">Bags & Shoes</a>
+                                                <a href="{{ route('shop') }}">Bags & Shoes</a>
                                             </li>
                                             <li class="header-catagory-item">
                                                 <a class="menu-down-arrow" href="#">Women Fashion</a>
@@ -255,13 +255,13 @@
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="product.html">Men's Clothing</a>
+                                                <a href="{{ route('shop') }}">Men's Clothing</a>
                                             </li>
                                             <li>
-                                                <a href="product.html">On Sale</a>
+                                                <a href="{{ route('shop') }}">On Sale</a>
                                             </li>
                                             <li>
-                                                <a href="product.html">All Accessories</a>
+                                                <a href="{{ route('shop') }}">All Accessories</a>
                                             </li>
                                         </ul>
                                     </div>

@@ -31,8 +31,16 @@ class HomeController extends Controller
     {
       return view('web.recently-view');
     }
-     public function register()
+   public function compare()
     {
-      return view('auth.register');
+      return view('web.compare');
+    }
+     public function product()
+    {
+        return view('web.product');
+    }
+     public function singleProduct()
+    {
+       return view('web.singleProduct');
     }
 }

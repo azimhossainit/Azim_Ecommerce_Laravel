@@ -27,7 +27,7 @@
                                 <h2>Trendy & Unique
                                     Collection</h2>
                             </div>
-                            <a class="theme-btn" href="product.html">Shop Now</a>
+                            <a class="theme-btn" href="{{ route('shop') }}">Shop Now</a>
                         </div>
                     </div>
                     <div class="hero-slider-item">
@@ -39,7 +39,7 @@
                                 <h2>Trendy & Unique
                                     Collection</h2>
                             </div>
-                            <a class="theme-btn" href="product.html">Shop Now</a>
+                            <a class="theme-btn" href="{{ route('shop') }}">Shop Now</a>
                         </div>
                     </div>
                     <div class="hero-slider-item">
@@ -51,7 +51,7 @@
                                 <h2>Trendy & Unique
                                     Collection</h2>
                             </div>
-                            <a class="theme-btn" href="product.html">Shop Now</a>
+                            <a class="theme-btn" href="{{ route('shop') }}">Shop Now</a>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                             <img src="{{ asset('web/assets/images/featured-categorie/1.png')}}" alt="">
                         </div>
                         <div class="text">
-                            <h2><a href="product.html">Sneakers</a></h2>
+                            <h2><a href="{{ route('shop') }}">Sneakers</a></h2>
                         </div>
                     </div>
                     <div class="featured-item">
@@ -97,7 +97,7 @@
                             <img src="{{ asset('web/assets/images/featured-categorie/2.png')}}" alt="">
                         </div>
                         <div class="text">
-                            <h2><a href="product.html">Cosmetics</a></h2>
+                            <h2><a href="{{ route('shop') }}">Cosmetics</a></h2>
                         </div>
                     </div>
                     <div class="featured-item">
@@ -105,7 +105,7 @@
                             <img src="{{ asset('web/assets/images/featured-categorie/3.png')}}" alt="">
                         </div>
                         <div class="text">
-                            <h2><a href="product.html">Bags</a></h2>
+                            <h2><a href="{{ route('shop') }}">Bags</a></h2>
                         </div>
                     </div>
                     <div class="featured-item">
@@ -113,7 +113,7 @@
                             <img src="{{ asset('web/assets/images/featured-categorie/4.png')}}" alt="">
                         </div>
                         <div class="text">
-                            <h2><a href="product.html">Jackets</a></h2>
+                            <h2><a href="{{ route('shop') }}">Jackets</a></h2>
                         </div>
                     </div>
                     <div class="featured-item">
@@ -121,7 +121,7 @@
                             <img src="{{ asset('web/assets/images/featured-categorie/5.png')}}" alt="">
                         </div>
                         <div class="text">
-                            <h2><a href="product.html">Skin Care</a></h2>
+                            <h2><a href="{{ route('shop') }}">Skin Care</a></h2>
                         </div>
                     </div>
                     <div class="featured-item">
@@ -129,7 +129,7 @@
                             <img src="{{ asset('web/assets/images/featured-categorie/6.png')}}" alt="">
                         </div>
                         <div class="text">
-                            <h2><a href="product.html">Jewelry</a></h2>
+                            <h2><a href="{{ route('shop') }}">Jewelry</a></h2>
                         </div>
                     </div>
                     <div class="featured-item">
@@ -137,7 +137,7 @@
                             <img src="{{ asset('web/assets/images/featured-categorie/7.png')}}" alt="">
                         </div>
                         <div class="text">
-                            <h2><a href="product.html">Dress</a></h2>
+                            <h2><a href="{{ route('shop') }}">Dress</a></h2>
                         </div>
                     </div>
                     <div class="featured-item">
@@ -145,7 +145,7 @@
                             <img src="{{ asset('web/assets/images/featured-categorie/8.png')}}" alt="">
                         </div>
                         <div class="text">
-                            <h2><a href="product.html">Kids</a></h2>
+                            <h2><a href="{{ route('shop') }}">Kids</a></h2>
                         </div>
                     </div>
                 </div>
@@ -174,7 +174,7 @@
                                 <div class="count-up">
                                     <div id="clock"></div>
                                 </div>
-                                <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                             </div>
 
                         </div>
@@ -184,7 +184,7 @@
                             <div class="text">
                                 <h2>New Year Sale</h2>
                                 <h4>Up To 70% Off</h4>
-                                <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -226,7 +226,7 @@
                                         <del class="old-price">$200.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -252,7 +252,7 @@
                                         <del class="old-price">$190.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -278,7 +278,7 @@
                                         <del class="old-price">$200.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -304,7 +304,7 @@
                                         <del class="old-price">$150.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -330,7 +330,7 @@
                                         <del class="old-price">$130.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -356,7 +356,7 @@
                                         <del class="old-price">$200.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -382,7 +382,7 @@
                                         <del class="old-price">$200.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -408,13 +408,13 @@
                                         <del class="old-price">$130.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="more-btn">
-                            <a class="theme-btn-s2" href="product.html">View All</a>
+                            <a class="theme-btn-s2" href="{{ route('shop') }}">View All</a>
                         </div>
                     </div>
                 </div>
@@ -482,7 +482,7 @@
                                         </div>
                                         50
                                     </div>% Off</div>
-                                <a class="upcoming-btn" href="product.html">Shop Now</a>
+                                <a class="upcoming-btn" href="{{ route('shop') }}">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -525,7 +525,7 @@
                                             <del class="old-price">$200.00</del>
                                         </div>
                                         <div class="shop-btn">
-                                            <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                            <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -554,7 +554,7 @@
                                             <del class="old-price">$150.00</del>
                                         </div>
                                         <div class="shop-btn">
-                                            <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                            <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -597,7 +597,7 @@
                                 <del class="old-price">$200.00</del>
                             </div>
                             <div class="shop-btn">
-                                <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -621,7 +621,7 @@
                                 <del class="old-price">$160.00</del>
                             </div>
                             <div class="shop-btn">
-                                <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -645,7 +645,7 @@
                                 <del class="old-price">$180.00</del>
                             </div>
                             <div class="shop-btn">
-                                <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -669,7 +669,7 @@
                                 <del class="old-price">$350.00</del>
                             </div>
                             <div class="shop-btn">
-                                <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -694,7 +694,7 @@
                                 <del class="old-price">$200.00</del>
                             </div>
                             <div class="shop-btn">
-                                <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -717,7 +717,7 @@
                                     </div>
                                 </div>
                                 <div class="content">
-                                    <h3><a href="product.html">Yellow Ladies Bag </a></h3>
+                                    <h3><a href="{{ route('shop') }}">Yellow Ladies Bag </a></h3>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -739,7 +739,7 @@
                                     </div>
                                 </div>
                                 <div class="content">
-                                    <h3><a href="product.html">Pink Shoes</a></h3>
+                                    <h3><a href="{{ route('shop') }}">Pink Shoes</a></h3>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -761,7 +761,7 @@
                                     </div>
                                 </div>
                                 <div class="content">
-                                    <h3><a href="product.html">Parple Pant</a></h3>
+                                    <h3><a href="{{ route('shop') }}">Parple Pant</a></h3>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -788,7 +788,7 @@
                                     </div>
                                 </div>
                                 <div class="content">
-                                    <h3><a href="product.html">Kids Shoes</a></h3>
+                                    <h3><a href="{{ route('shop') }}">Kids Shoes</a></h3>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -810,7 +810,7 @@
                                     </div>
                                 </div>
                                 <div class="content">
-                                    <h3><a href="product.html">Stylish Earrings</a></h3>
+                                    <h3><a href="{{ route('shop') }}">Stylish Earrings</a></h3>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -832,7 +832,7 @@
                                     </div>
                                 </div>
                                 <div class="content">
-                                    <h3><a href="product.html">Yellow Hats</a></h3>
+                                    <h3><a href="{{ route('shop') }}">Yellow Hats</a></h3>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -859,7 +859,7 @@
                                     </div>
                                 </div>
                                 <div class="content">
-                                    <h3><a href="product.html">Kids Shoes</a></h3>
+                                    <h3><a href="{{ route('shop') }}">Kids Shoes</a></h3>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -881,7 +881,7 @@
                                     </div>
                                 </div>
                                 <div class="content">
-                                    <h3><a href="product.html">Stylish Earrings</a></h3>
+                                    <h3><a href="{{ route('shop') }}">Stylish Earrings</a></h3>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -903,7 +903,7 @@
                                     </div>
                                 </div>
                                 <div class="content">
-                                    <h3><a href="product.html">Yellow Hats</a></h3>
+                                    <h3><a href="{{ route('shop') }}">Yellow Hats</a></h3>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
