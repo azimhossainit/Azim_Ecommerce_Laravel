@@ -84,70 +84,17 @@
                     </div>
                 </div>
                 <div class="featured-categorie-slider owl-carousel">
+                    @foreach ($categories ?? [] as $category)
                     <div class="featured-item">
                         <div class="images">
-                            <img src="{{ asset('web/assets/images/featured-categorie/1.png')}}" alt="">
+                        <img src="{{ $category?->thumbnail }}" alt="" class="img-fluid" style=" max-height: 100px; object-fit: cover;">
                         </div>
                         <div class="text">
-                            <h2><a href="{{ route('shop') }}">Sneakers</a></h2>
+                        <h2><a href="{{ route('shop') }}">{{ $category?->name }}</a></h2>
                         </div>
                     </div>
-                    <div class="featured-item">
-                        <div class="images">
-                            <img src="{{ asset('web/assets/images/featured-categorie/2.png')}}" alt="">
-                        </div>
-                        <div class="text">
-                            <h2><a href="{{ route('shop') }}">Cosmetics</a></h2>
-                        </div>
-                    </div>
-                    <div class="featured-item">
-                        <div class="images">
-                            <img src="{{ asset('web/assets/images/featured-categorie/3.png')}}" alt="">
-                        </div>
-                        <div class="text">
-                            <h2><a href="{{ route('shop') }}">Bags</a></h2>
-                        </div>
-                    </div>
-                    <div class="featured-item">
-                        <div class="images">
-                            <img src="{{ asset('web/assets/images/featured-categorie/4.png')}}" alt="">
-                        </div>
-                        <div class="text">
-                            <h2><a href="{{ route('shop') }}">Jackets</a></h2>
-                        </div>
-                    </div>
-                    <div class="featured-item">
-                        <div class="images">
-                            <img src="{{ asset('web/assets/images/featured-categorie/5.png')}}" alt="">
-                        </div>
-                        <div class="text">
-                            <h2><a href="{{ route('shop') }}">Skin Care</a></h2>
-                        </div>
-                    </div>
-                    <div class="featured-item">
-                        <div class="images">
-                            <img src="{{ asset('web/assets/images/featured-categorie/6.png')}}" alt="">
-                        </div>
-                        <div class="text">
-                            <h2><a href="{{ route('shop') }}">Jewelry</a></h2>
-                        </div>
-                    </div>
-                    <div class="featured-item">
-                        <div class="images">
-                            <img src="{{ asset('web/assets/images/featured-categorie/7.png')}}" alt="">
-                        </div>
-                        <div class="text">
-                            <h2><a href="{{ route('shop') }}">Dress</a></h2>
-                        </div>
-                    </div>
-                    <div class="featured-item">
-                        <div class="images">
-                            <img src="{{ asset('web/assets/images/featured-categorie/8.png')}}" alt="">
-                        </div>
-                        <div class="text">
-                            <h2><a href="{{ route('shop') }}">Kids</a></h2>
-                        </div>
-                    </div>
+                @endforeach
+
                 </div>
             </div>
         </section>
@@ -781,173 +728,136 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="highlight-wrap">
                             <h2>Recently added</h2>
-                            <div class="product-card">
-                                <div class="card-image">
-                                    <div class="image">
-                                        <img src="{{ asset('web/assets/images/recently-added/1.png')}}" alt="">
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <h3><a href="{{ route('shop') }}">Kids Shoes</a></h3>
-                                    <div class="rating-product">
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <span>120</span>
-                                    </div>
-                                    <div class="price">
-                                        <span class="present-price">$120.00</span>
-                                        <del class="old-price">$150.00</del>
-                                    </div>
+                          @foreach ($recentlyAdd ?? [] as $product)
+                        <div class="product-card">
+                            <div class="card-image">
+                                <div class="image" style="max-height: 100%;">
+                                <img src="{{$product?->thumbnail}}" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="">
                                 </div>
                             </div>
-                            <div class="product-card">
-                                <div class="card-image">
-                                    <div class="image">
-                                        <img src="{{ asset('web/assets/images/recently-added/2.png')}}" alt="">
-                                    </div>
+                            <div class="content">
+                                <h3><a href="{{ route('singleProduct', $product?->slug) }}">{{ Str::limit($product?->name, 20)}}</a></h3>
+                                <div class="rating-product">
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <span>120</span>
                                 </div>
-                                <div class="content">
-                                    <h3><a href="{{ route('shop') }}">Stylish Earrings</a></h3>
-                                    <div class="rating-product">
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <span>230</span>
-                                    </div>
-                                    <div class="price">
-                                        <span class="present-price">$150.00</span>
-                                        <del class="old-price">$200.00</del>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="card-image">
-                                    <div class="image">
-                                        <img src="{{ asset('web/assets/images/recently-added/3.png')}}" alt="">
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <h3><a href="{{ route('shop') }}">Yellow Hats</a></h3>
-                                    <div class="rating-product">
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <span>130</span>
-                                    </div>
-                                    <div class="price">
-                                        <span class="present-price">$170.00</span>
-                                        <del class="old-price">$250.00</del>
-                                    </div>
+                                <div class="price">
+                                    @if ($product?->discount_price && $product?->discount_price > 0)
+                                      <span class="present-price">${{$product?->discount_price}}</span>
+                                      <del class="old-price">${{$product?->price}}</del>
+                                    @else
+                                      <span class="present-price">${{$product?->price}}</span>
+                                    @endif
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="highlight-wrap">
-                            <h2>Top Rated</h2>
-                            <div class="product-card">
-                                <div class="card-image">
-                                    <div class="image">
-                                        <img src="{{ asset('web/assets/images/top-rated/1.png')}}" alt="">
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <h3><a href="{{ route('shop') }}">Kids Shoes</a></h3>
-                                    <div class="rating-product">
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <span>120</span>
-                                    </div>
-                                    <div class="price">
-                                        <span class="present-price">$120.00</span>
-                                        <del class="old-price">$150.00</del>
-                                    </div>
+                        @endforeach
+                      </div>
+                     </div>
+                         <div class="col-lg-4 col-md-6 col-12">
+                    <div class="highlight-wrap">
+                        <h2>Top Rated</h2>
+                        <div class="product-card">
+                            <div class="card-image">
+                                <div class="image">
+                                    <img src="{{ asset('web/assets/images/top-rated/1.png') }}" alt="">
                                 </div>
                             </div>
-                            <div class="product-card">
-                                <div class="card-image">
-                                    <div class="image">
-                                        <img src="{{ asset('web/assets/images/top-rated/2.png')}}" alt="">
-                                    </div>
+                            <div class="content">
+                                <h3><a href="{{ route('shop') }}">Kids Shoes</a></h3>
+                                <div class="rating-product">
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <span>120</span>
                                 </div>
-                                <div class="content">
-                                    <h3><a href="{{ route('shop') }}">Stylish Earrings</a></h3>
-                                    <div class="rating-product">
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <span>230</span>
-                                    </div>
-                                    <div class="price">
-                                        <span class="present-price">$150.00</span>
-                                        <del class="old-price">$200.00</del>
-                                    </div>
+                                <div class="price">
+                                    <span class="present-price">$120.00</span>
+                                    <del class="old-price">$150.00</del>
                                 </div>
                             </div>
-                            <div class="product-card">
-                                <div class="card-image">
-                                    <div class="image">
-                                        <img src="{{ asset('web/assets/images/top-rated/3.png')}}" alt="">
-                                    </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="card-image">
+                                <div class="image">
+                                    <img src="{{ asset('web/assets/images/top-rated/2.png') }}" alt="">
                                 </div>
-                                <div class="content">
-                                    <h3><a href="{{ route('shop') }}">Yellow Hats</a></h3>
-                                    <div class="rating-product">
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <i class="fi flaticon-star"></i>
-                                        <span>130</span>
-                                    </div>
-                                    <div class="price">
-                                        <span class="present-price">$170.00</span>
-                                        <del class="old-price">$250.00</del>
-                                    </div>
+                            </div>
+                            <div class="content">
+                                <h3><a href="{{ route('shop') }}">Stylish Earrings</a></h3>
+                                <div class="rating-product">
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <span>230</span>
+                                </div>
+                                <div class="price">
+                                    <span class="present-price">$150.00</span>
+                                    <del class="old-price">$200.00</del>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="card-image">
+                                <div class="image">
+                                    <img src="{{ asset('web/assets/images/top-rated/3.png') }}" alt="">
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h3><a href="{{ route('shop') }}">Yellow Hats</a></h3>
+                                <div class="rating-product">
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <i class="fi flaticon-star"></i>
+                                    <span>130</span>
+                                </div>
+                                <div class="price">
+                                    <span class="present-price">$170.00</span>
+                                    <del class="old-price">$250.00</del>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- end of themart-highlight-product-section -->
+        </div>
+    </section>
+    <!-- end of themart-highlight-product-section -->
 
-        <!-- start of themart-cta-section -->
-        <section class="themart-cta-section section-padding">
-            <div class="container">
-                <div class="cta-wrap">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-8 col-12">
-                            <div class="cta-content">
-                                <h2>Subscribe Our Newsletter & <br>
-                                    Get 30% Discounts For Next Order</h2>
-                                <form>
-                                    <div class="input-1">
-                                        <input type="email" class="form-control" placeholder="Your Email..."
-                                            required="">
-                                        <div class="submit clearfix">
-                                            <button class="theme-btn-s2" type="submit">Subscribe</button>
-                                        </div>
+    <!-- start of themart-cta-section -->
+    <section class="themart-cta-section section-padding">
+        <div class="container">
+            <div class="cta-wrap">
+                <div class="row">
+                    <div class="col-lg-6 col-md-8 col-12">
+                        <div class="cta-content">
+                            <h2>Subscribe Our Newsletter & <br>
+                                Get 30% Discounts For Next Order</h2>
+                            <form>
+                                <div class="input-1">
+                                    <input type="email" class="form-control" placeholder="Your Email..."
+                                        required="">
+                                    <div class="submit clearfix">
+                                        <button class="theme-btn-s2" type="submit">Subscribe</button>
                                     </div>
-                                </form>
-                            </div>
-
+                                </div>
+                            </form>
                         </div>
+
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    <!-- end of themart-cta-section -->
 @endsection

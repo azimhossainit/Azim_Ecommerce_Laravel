@@ -1,3 +1,7 @@
+ @php
+    $categories = App\Models\Category::with('subCategories')->latest('id')->get();
+    $user = auth('web')?->user();
+ @endphp
  <!-- start header -->
         <header id="header">
             <div class="topbar">
@@ -58,12 +62,16 @@
                                 <div class="category">
                                     <select name="service" class="form-control">
                                         <option disabled="disabled" selected="">All Category</option>
-                                        <option>Men</option>
+                                    @foreach ($categories ?? [] as $category)
+                                    <option>{{ $category->name }}</option>
+                                    @endforeach                                 
+                                       
+                                        <!-- <option>Men</option>
                                         <option>Women</option>
                                         <option>Kids</option>
                                         <option>Sales</option>
                                         <option>Perfect Cake</option>
-                                        <option>All Of The Above</option>
+                                        <option>All Of The Above</option> -->
                                     </select>
                                 </div>
                                 <div class="search-box">
@@ -209,93 +217,54 @@
                                     <button class="header-shop-toggle-btn"><span>Shop By Category</span> </button>
                                     <div class="mini-shop-item">
                                         <ul id="metis-menu">
-                                            <li>
-                                                <a href="{{ route('shop') }}">Feature Product</a>
-                                            </li>
-                                            <li class="header-catagory-item">
-                                                <a class="menu-down-arrow" href="#">Perfunsee & Cologne</a>
+                                        @foreach ($categories ?? [] as $category)
+                                        <li class="header-catagory-item">
+                                            @if ($category?->subCategories && count($category?->subCategories) > 0)
+                                                <a class="menu-down-arrow" href="#">{{ $category?->name }}</a>
                                                 <ul class="header-catagory-single">
-                                                    <li><a href="#">Men's Clothing</a></li>
-                                                    <li><a href="#">Computer & Office</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
+                                                    @foreach ($category?->subCategories as $subCategory)
+                                                        <li><a href="#">{{ $subCategory?->name }}</a></li>
+                                                    @endforeach
                                                 </ul>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('shop') }}">Best Sellers</a>
-                                            </li>
-                                            <li class="header-catagory-item">
-                                                <a class="menu-down-arrow" href="#">Men Fashion</a>
-                                                <ul class="header-catagory-single">
-                                                    <li><a href="#">Men's Clothing</a></li>
-                                                    <li><a href="#">Computer & Office</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('shop') }}">Bags & Shoes</a>
-                                            </li>
-                                            <li class="header-catagory-item">
-                                                <a class="menu-down-arrow" href="#">Women Fashion</a>
-                                                <ul class="header-catagory-single">
-                                                    <li><a href="#">Men's Clothing</a></li>
-                                                    <li><a href="#">Computer & Office</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="header-catagory-item">
-                                                <a class="menu-down-arrow" href="#">Toys & kids Baby</a>
-                                                <ul class="header-catagory-single">
-                                                    <li><a href="#">Men's Clothing</a></li>
-                                                    <li><a href="#">Computer & Office</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('shop') }}">Men's Clothing</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('shop') }}">On Sale</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('shop') }}">All Accessories</a>
-                                            </li>
-                                        </ul>
+                                            @else
+                                                <a class="" href="#">{{ $category?->name }}</a>
+                                            @endif
+                                        </li>
+                                    @endforeach                                     
+                                               
+                                      </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-8 col-md-1 col-1">
-                                <div id="navbar" class="collapse navbar-collapse navigation-holder">
-                                    <button class="menu-close"><i class="ti-close"></i></button>
-                                    <ul class="nav navbar-nav mb-2 mb-lg-0">
-                                        <li class="menu-item-has-children">
-                                        <a href="{{ route('root') }}">Home</a>
-                                        </li>
-                                         <li><a href="{{ route('about') }}">About</a></li>
-                                         <li class="menu-item-has-children">
-                                        <a href="{{ route('shop') }}">Shop</a>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="{{ route('faq') }}">FAQ</a>
-                                        </li>
-                                        <li><a href="{{ route('contact') }}">Contact</a></li>
-                                    </ul>
+                        <div id="navbar" class="collapse navbar-collapse navigation-holder">
+                            <button class="menu-close"><i class="ti-close"></i></button>
+                            <ul class="nav navbar-nav mb-2 mb-lg-0">
+                                <li class="menu-item-has-children">
+                                    <a href="{{ route('root') }}">Home</a>
+                                </li>
+                                <li><a href="{{ route('about') }}">About</a></li>
+                                <li class="menu-item-has-children">
+                                    <a href="{{ route('shop') }}">Shop</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="{{ route('faq') }}">FAQ</a>
+                                </li>
+                                <li><a href="{{ route('contact') }}">Contact</a></li>
+                            </ul>
 
-                                </div><!-- end of nav-collapse -->
-                            </div>
-                            <div class="col-lg-2 col-md-1 col-1">
-                                <div class="header-right">
-                                    <a href="{{ route('recentlyView') }}" class="recent-btn"><i
-                                     class="fi flaticon-refresh"></i> 
-                                        <span>Recently Viewed</span>
-                                    </a>
-                                </div>
-                            </div>
+                        </div><!-- end of nav-collapse -->
+                    </div>
+                    <div class="col-lg-2 col-md-1 col-1">
+                        <div class="header-right">
+                            <a href="{{ route('recentlyView') }}" class="recent-btn"><i
+                                    class="fi flaticon-refresh"></i>
+                                <span>Recently Viewed</span>
+                            </a>
                         </div>
-                    </div><!-- end of container -->
-                </nav>
-            </div>
-        </header>
+                    </div>
+                </div>
+            </div><!-- end of container -->
+        </nav>
+    </div>
+</header>

@@ -71,18 +71,18 @@
                                     <h3>Instagram</h3>
                                 </div>
                                 <ul class="d-flex">
-                                    <li><a href="project-single.html"><img src="{{ asset('web/assets/images/instragram/1.jpg')}}"
-                                                alt=""></a></li>
-                                    <li><a href="project-single.html"><img src="{{ asset('web/assets/images/instragram/2.jpg')}}"
-                                                alt=""></a></li>
-                                    <li><a href="project-single.html"><img src="{{ asset('web/assets/images/instragram/4.jpg')}}"
-                                                alt=""></a></li>
-                                    <li><a href="project-single.html"><img src="{{ asset('web/assets/images/instragram/3.jpg')}}"
-                                                alt=""></a></li>
-                                    <li><a href="project-single.html"><img src="{{ asset('web/assets/images/instragram/4.jpg')}}"
-                                                alt=""></a></li>
-                                    <li><a href="project-single.html"><img src="{{ asset('web/assets/images/instragram/1.jpg')}}"
-                                                alt=""></a></li>
+                            <li><a href="project-single.html"><img
+                                        src="{{ asset('web/assets/images/instragram/1.jpg') }}" alt=""></a></li>
+                            <li><a href="project-single.html"><img
+                                        src="{{ asset('web/assets/images/instragram/2.jpg') }}" alt=""></a></li>
+                            <li><a href="project-single.html"><img
+                                        src="{{ asset('web/assets/images/instragram/4.jpg') }}" alt=""></a></li>
+                            <li><a href="project-single.html"><img
+                                        src="{{ asset('web/assets/images/instragram/3.jpg') }}" alt=""></a></li>
+                            <li><a href="project-single.html"><img
+                                        src="{{ asset('web/assets/images/instragram/4.jpg') }}" alt=""></a></li>
+                            <li><a href="project-single.html"><img
+                                        src="{{ asset('web/assets/images/instragram/1.jpg') }}" alt=""></a></li>
                                 </ul>
                             </div>
                         </div>
