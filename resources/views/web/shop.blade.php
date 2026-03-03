@@ -40,16 +40,9 @@
                                 <div class="shop-filter-item category-widget">
                                     <h2>Categories</h2>
                                     <ul>
-                                        <li><a href="#">Fashion<span>(10)</span></a></li>
-                                        <li><a href="#">Winter Ware<span>(20)</span></a></li>
-                                        <li><a href="#">Bags<span>(30)</span></a></li>
-                                        <li><a href="#">Shoes<span>(12)</span></a></li>
-                                        <li><a href="#">Men Fashion<span>(10)</span></a></li>
-                                        <li><a href="#">Weman Fashion<span>(22)</span></a></li>
-                                        <li><a href="#">Watch<span>(15)</span></a></li>
-                                        <li><a href="#">Kids<span>(18)</span></a></li>
-                                        <li><a href="#">Headphones<span>(16)</span></a></li>
-                                        <li><a href="#">Hats<span>(35)</span></a></li>
+                                    @foreach ($categories ?? [] as $category)
+                                    <li><a href="#">{{ $category?->name }}<span>(10)</span></a></li>
+                                    @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -86,49 +79,16 @@
                                 <div class="shop-filter-item">
                                     <h2>Color</h2>
                                     <ul>
-                                        <li>
-                                            <label class="topcoat-radio-button__label">
-                                                Green <span>(21)</span>
-                                                <input type="radio" name="topcoat2">
-                                                <span class="topcoat-radio-button"></span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="topcoat-radio-button__label">
-                                                Blue <span>(24)</span>
-                                                <input type="radio" name="topcoat2">
-                                                <span class="topcoat-radio-button"></span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="topcoat-radio-button__label">
-                                                Red<span>(13)</span>
-                                                <input type="radio" name="topcoat2">
-                                                <span class="topcoat-radio-button"></span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="topcoat-radio-button__label">
-                                                Brown<span>(27)</span>
-                                                <input type="radio" name="topcoat2">
-                                                <span class="topcoat-radio-button"></span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="topcoat-radio-button__label">
-                                                Yellow<span>(12)</span>
-                                                <input type="radio" name="topcoat2">
-                                                <span class="topcoat-radio-button"></span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="topcoat-radio-button__label">
-                                                White<span>(32)
-                                                </span>
-                                                <input type="radio" name="topcoat2">
-                                                <span class="topcoat-radio-button"></span>
-                                            </label>
-                                        </li>
+                                    @foreach ($colors ?? [] as $color )
+                                    <li>
+                                        <label class="topcoat-radio-button__label">
+                                            {{ $color?->name }} <span>(21)</span>
+                                            <input type="radio" name="topcoat2">
+                                            <span class="topcoat-radio-button"></span>
+                                        </label>
+                                    </li>
+                                    @endforeach
+                                   
                                     </ul>
                                 </div>
                             </div>
@@ -136,50 +96,34 @@
                                 <div class="shop-filter-item">
                                     <h2>Size</h2>
                                     <ul>
-                                        <li>
-                                            <label class="topcoat-radio-button__label">
-                                                Small <span>(10)</span>
-                                                <input type="radio" name="topcoat3">
-                                                <span class="topcoat-radio-button"></span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="topcoat-radio-button__label">
-                                                Medium<span>(24)</span>
-                                                <input type="radio" name="topcoat3">
-                                                <span class="topcoat-radio-button"></span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="topcoat-radio-button__label">
-                                                Large<span>(13)</span>
-                                                <input type="radio" name="topcoat3">
-                                                <span class="topcoat-radio-button"></span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="topcoat-radio-button__label">
-                                                Extra Large<span>(18)</span>
-                                                <input type="radio" name="topcoat3">
-                                                <span class="topcoat-radio-button"></span>
-                                            </label>
-                                        </li>
+                                    @foreach ($sizes ?? [] as $size )
+                                    <li>
+                                    <label class="topcoat-radio-button__label">
+                                        {{ $size?->name }} <span>(10)</span>
+                                        <input type="radio" name="topcoat3">
+                                        <span class="topcoat-radio-button"></span>
+                                        </label>
+                                    </li>
+                                    @endforeach
                                     </ul>
                                 </div>
                             </div>
                             <div class="filter-item">
                                 <div class="shop-filter-item new-product">
                                     <h2>New Products</h2>
-                                    <ul>
+                                    @foreach ($newProducts ?? [] as $product)
                                         <li>
                                             <div class="product-card">
                                                 <div class="card-image">
-                                                    <div class="image">
-                                                        <img src="{{ asset('web/assets/images/new-product/1.png') }}" alt="">
+                                                    <div class="image" style="max-height: 100%;">
+                                                        <img src="{{ $product?->thumbnail }}" class="img-fluid w-100 h-100"
+                                                            style="object-fit: cover;" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="content">
-                                                    <h3><a href="{{ route('shop') }}">Stylish Pink Coat</a></h3>
+                                                    <h3><a
+                                                    href="{{route('singleProduct', $product?->slug) }}">{{ Str::limit($product?->name, 20) }}</a>
+                                                    </h3>
                                                     <div class="rating-product">
                                                         <i class="fi flaticon-star"></i>
                                                         <i class="fi flaticon-star"></i>
@@ -189,60 +133,18 @@
                                                         <span>30</span>
                                                     </div>
                                                     <div class="price">
-                                                        <span class="present-price">$120.00</span>
-                                                        <del class="old-price">$200.00</del>
+                                                        @if ($product?->discount_price && $product?->discount_price > 0)
+                                                            <span
+                                                                class="present-price">${{ $product?->discount_price }}</span>
+                                                            <del class="old-price">${{ $product?->price }}</del>
+                                                        @else
+                                                            <span class="present-price">${{ $product?->price }}</span>
+                                                        @endif
                                                     </div>
                                                 </div>
-                                            </div> 
+                                            </div>
                                         </li>
-                                        <li>
-                                            <div class="product-card">
-                                                <div class="card-image">
-                                                    <div class="image">
-                                                        <img src="{{ asset('web/assets/images/new-product/2.png') }}" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="content">
-                                                    <h3><a href="{{ route('shop') }}">Blue Bag</a></h3>
-                                                    <div class="rating-product">
-                                                        <i class="fi flaticon-star"></i>
-                                                        <i class="fi flaticon-star"></i>
-                                                        <i class="fi flaticon-star"></i>
-                                                        <i class="fi flaticon-star"></i>
-                                                        <i class="fi flaticon-star"></i>
-                                                        <span>30</span>
-                                                    </div>
-                                                    <div class="price">
-                                                        <span class="present-price">$120.00</span>
-                                                        <del class="old-price">$200.00</del>
-                                                    </div>
-                                                </div>
-                                            </div> 
-                                        </li>
-                                        <li>
-                                            <div class="product-card">
-                                                <div class="card-image">
-                                                    <div class="image">
-                                                        <img src="{{ asset('web/assets/images/new-product/3.png') }}" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="content">
-                                                    <h3><a href="{{ route('shop') }}">Kids Blue Shoes</a></h3>
-                                                    <div class="rating-product">
-                                                        <i class="fi flaticon-star"></i>
-                                                        <i class="fi flaticon-star"></i>
-                                                        <i class="fi flaticon-star"></i>
-                                                        <i class="fi flaticon-star"></i>
-                                                        <i class="fi flaticon-star"></i>
-                                                        <span>30</span>
-                                                    </div>
-                                                    <div class="price">
-                                                        <span class="present-price">$120.00</span>
-                                                        <del class="old-price">$200.00</del>
-                                                    </div>
-                                                </div>
-                                            </div> 
-                                        </li>
+                                    @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -250,15 +152,9 @@
                                 <div class="shop-filter-item tag-widget">
                                     <h2>Popular Tags</h2>
                                     <ul>
-                                        <li><a href="#">Fashion</a></li>
-                                        <li><a href="#">Shoes</a></li>
-                                        <li><a href="#">Kids</a></li>
-                                        <li><a href="#">Theme</a></li>
-                                        <li><a href="#">Stylish</a></li>
-                                        <li><a href="#">Women</a></li>
-                                        <li><a href="#">Shop</a></li>
-                                        <li><a href="#">Men</a></li>
-                                        <li><a href="#">Blog</a></li>
+                                    @foreach ($tags ?? [] as $tag)
+                                    <li><a href="#">{{ $tag?->name }}</a></li>
+                                    @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -286,14 +182,18 @@
                         </div>
                         <div class="product-wrap">
                             <div class="row align-items-center">
+                                @foreach ($products ?? [] as $product)
                                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/interest-product/1.png') }}" alt="">
-                                            <div class="tag new">New</div>
+                                        <div class="image"
+                                            style="max-height: 250px; min-height: 250px; object-fit: cover;">
+                                            <img src="{{ $product?->thumbnail }}" alt="">
+                                            {{-- <div class="tag new">New</div> --}}
                                         </div>
                                         <div class="text">
-                                            <h2><a href="product-single.html">Wireless Headphones</a></h2>
+                                            <h2><a
+                                            href="{{ route('singleProduct', $product?->slug) }}">{{ Str::limit($product?->name, 20) }}</a>
+                                            </h2>
                                             <div class="rating-product">
                                                 <i class="fi flaticon-star"></i>
                                                 <i class="fi flaticon-star"></i>
@@ -303,385 +203,25 @@
                                                 <span>130</span>
                                             </div>
                                             <div class="price">
-                                                <span class="present-price">$120.00</span>
-                                                <del class="old-price">$200.00</del>
+                                                @if ($product?->discount_price && $product?->discount_price > 0)
+                                                    <span class="present-price">${{ $product?->discount_price }}</span>
+                                                    <del class="old-price">${{ $product?->price }}</del>
+                                                @else
+                                                    <span class="present-price">${{ $product?->price }}</span>
+                                                @endif
                                             </div>
                                             <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
+                                                <a class="theme-btn-s2" href="{{ route('singleProduct', $product?->slug) }}">Shop Now</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/interest-product/2.png') }}" alt="">
-                                            <div class="tag sale">Sale</div>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="product-single.html">Blue Bag with Lock</a></h2>
-                                            <div class="rating-product">
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <span>120</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="present-price">$160.00</span>
-                                                <del class="old-price">$190.00</del>
-                                            </div>
-                                            <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/interest-product/3.png') }}" alt="">
-                                            <div class="tag new">New</div>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="product-single.html">Stylish Pink Top</a></h2>
-                                            <div class="rating-product">
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <span>150</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="present-price">$150.00</span>
-                                                <del class="old-price">$200.00</del>
-                                            </div>
-                                            <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/interest-product/4.png') }}" alt="">
-                                            <div class="tag sale">Sale</div>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="product-single.html">Brown Com Boots</a></h2>
-                                            <div class="rating-product">
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <span>120</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="present-price">$120.00</span>
-                                                <del class="old-price">$150.00</del>
-                                            </div>
-                                            <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/interest-product/5.png') }}" alt="">
-                                            <div class="tag new">New</div>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="product-single.html">Winter Sweter</a></h2>
-                                            <div class="rating-product">
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <span>160</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="present-price">$110.00</span>
-                                                <del class="old-price">$130.00</del>
-                                            </div>
-                                            <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/interest-product/6.png') }}" alt="">
-                                            <div class="tag sale">Sale</div>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="product-single.html">Blue Kids Shoes</a></h2>
-                                            <div class="rating-product">
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <span>130</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="present-price">$180.00</span>
-                                                <del class="old-price">$200.00</del>
-                                            </div>
-                                            <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/interest-product/7.png') }}" alt="">
-                                            <div class="tag new">New</div>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="product-single.html">Stylish Bag</a></h2>
-                                            <div class="rating-product">
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <span>120</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="present-price">$170.00</span>
-                                                <del class="old-price">$200.00</del>
-                                            </div>
-                                            <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/interest-product/8.png') }}" alt="">
-                                            <div class="tag sale">Sale</div>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="product-single.html">Finger Rings</a></h2>
-                                            <div class="rating-product">
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <span>120</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="present-price">$100.00</span>
-                                                <del class="old-price">$130.00</del>
-                                            </div>
-                                            <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/trending-product/1.png') }}" alt="">
-                                            <div class="tag new">New</div>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="product-single.html">Pink Baby Shoes</a></h2>
-                                            <div class="rating-product">
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <span>130</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="present-price">$120.00</span>
-                                                <del class="old-price">$200.00</del>
-                                            </div>
-                                            <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/interest-product/1.png') }}" alt="">
-                                            <div class="tag new">New</div>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="product-single.html">Wireless Headphones</a></h2>
-                                            <div class="rating-product">
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <span>130</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="present-price">$120.00</span>
-                                                <del class="old-price">$200.00</del>
-                                            </div>
-                                            <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/interest-product/2.png') }}" alt="">
-                                            <div class="tag sale">Sale</div>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="product-single.html">Blue Bag with Lock</a></h2>
-                                            <div class="rating-product">
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <span>120</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="present-price">$160.00</span>
-                                                <del class="old-price">$190.00</del>
-                                            </div>
-                                            <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/interest-product/3.png') }}" alt="">
-                                            <div class="tag new">New</div>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="product-single.html">Stylish Pink Top</a></h2>
-                                            <div class="rating-product">
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <span>150</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="present-price">$150.00</span>
-                                                <del class="old-price">$200.00</del>
-                                            </div>
-                                            <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/interest-product/4.png') }}" alt="">
-                                            <div class="tag sale">Sale</div>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="product-single.html">Brown Com Boots</a></h2>
-                                            <div class="rating-product">
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <span>120</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="present-price">$120.00</span>
-                                                <del class="old-price">$150.00</del>
-                                            </div>
-                                            <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/interest-product/5.png') }}" alt="">
-                                            <div class="tag new">New</div>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="product-single.html">Winter Sweter</a></h2>
-                                            <div class="rating-product">
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <span>160</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="present-price">$110.00</span>
-                                                <del class="old-price">$130.00</del>
-                                            </div>
-                                            <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="product-item">
-                                        <div class="image">
-                                            <img src="{{ asset('web/assets/images/interest-product/6.png') }}" alt="">
-                                            <div class="tag sale">Sale</div>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="product-single.html">Blue Kids Shoes</a></h2>
-                                            <div class="rating-product">
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <i class="fi flaticon-star"></i>
-                                                <span>130</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="present-price">$180.00</span>
-                                                <del class="old-price">$200.00</del>
-                                            </div>
-                                            <div class="shop-btn">
-                                                <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- product-area-end -->
-
+    </div>
+    <!-- product-area-end -->
 @endsection

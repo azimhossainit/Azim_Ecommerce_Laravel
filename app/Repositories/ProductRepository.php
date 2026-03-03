@@ -26,15 +26,21 @@ class ProductRepository extends Repository
                 'image'
             );
         }
-        // ✅ FIX: null safe media_id
-        $product = self::create([
-            'name'      => $request->name,
-            'sku_code'  => $request->product_sku,
-            'price'     => $request->selling_price,
-            'by_price'  => $request->buying_price,
-            'discount'  => 0,
-            'media_id'  => $thumbnail?->id,
-        ]);
+
+        $discount = 0;
+        if ($request->discount_price) {
+        $discount = ($request->selling_price - $request->discount_price) / $request->selling_price * 100;
+        }
+            $product = self::create([
+            'name' => $request->name,
+            'sku_code' => $request->product_sku,
+            'by_price' => $request->buying_price,
+            'price' => $request->selling_price,
+            'discount_price' => $request->discount_price,
+            'discount' => $discount ?? 0,
+            'media_id' => $thumbnail->id,
+       ]);
+      
         ProductDetails::create([
             'product_id'        => $product->id,
             'category_id'       => $request->category,
@@ -96,11 +102,17 @@ class ProductRepository extends Repository
         // }
 
         // ✅ FIX: null safe media_id
+        $discount = 0;
+        if ($request->discount_price) {
+        $discount = ($request->selling_price - $request->discount_price) / $request->selling_price * 100;
+        }
         $product->update([
-            'name'     => $request->name,
-            'price'    => $request->selling_price,
+            'name' => $request->name,
             'by_price' => $request->buying_price,
-            'media_id' => $media?->id,
+            'price' => $request->selling_price,
+            'discount' => $discount,
+            'discount_price' => $request->discount_price,
+            'media_id' => $media->id,
         ]);
         $product->details->update([
             'category_id'       => $request->category,

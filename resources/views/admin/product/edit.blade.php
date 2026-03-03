@@ -104,7 +104,12 @@
                             <x-input type="number" label='Product Selling Price' name="selling_price"
                                 placeholder="Product Selling Price" value="{{ old('selling_price', $product->price) }}" />
                         </div>
-
+                        <div class="col-md-6 mt-3">
+                        <x-input type="number" label='Product Discount Price' name="discount_price"
+                        placeholder="Product Discount Price" value="{{ old('discount_price', $product->discount_price) }}" />
+                      </div>
+                    </div>
+                </div>
                     <div class="sectionCard mb-5">
                      <span class="sectionTitle">Product Description</span>
                       <div class="row mt-4">
