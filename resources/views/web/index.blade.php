@@ -726,13 +726,13 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-12">
-                        <div class="highlight-wrap">
-                            <h2>Recently added</h2>
-                          @foreach ($recentlyAdd ?? [] as $product)
+                    <div class="highlight-wrap">
+                        <h2>Recently added</h2>
+                        @foreach ($recentlyAdd ?? [] as $product)
                         <div class="product-card">
                             <div class="card-image">
                                 <div class="image" style="max-height: 100%;">
-                                <img src="{{$product?->thumbnail}}" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="">
+                                    <img src="{{$product?->thumbnail}}" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="">
                                 </div>
                             </div>
                             <div class="content">
@@ -752,13 +752,14 @@
                                     @else
                                       <span class="present-price">${{$product?->price}}</span>
                                     @endif
+
                                 </div>
                             </div>
                         </div>
                         @endforeach
-                      </div>
-                     </div>
-                         <div class="col-lg-4 col-md-6 col-12">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
                     <div class="highlight-wrap">
                         <h2>Top Rated</h2>
                         <div class="product-card">

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\ProductInventory; 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -34,9 +35,10 @@ class Product extends Model
                 $baseSlug = Str::slug($product->name);
                 $slug = $baseSlug;
                 $count = 1;
-                while(product::where('slug', $slug)->exists()) {
+                while(Product::where('slug', $slug)->exists()) {
                     $slug = $baseSlug . '-' . $count++;
                 }
+
                 $product->slug = $slug;
             } else {
                 $product->slug = Str::slug($product->name);
@@ -49,13 +51,42 @@ class Product extends Model
     {
         return $this->belongsTo(Media::class, 'media_id');
     }
+public function inventories()
+{
+    return $this->hasMany(ProductInventory::class, 'product_id');
+}
+    public function colors()
+    {
+        return $this->hasManyThrough(
+            Color::class,
+            ProductInventory::class,
+            'product_id',
+            'id',
+            'id',
+            'color_id'
+        );
+    }
+
+    public function sizes()
+    {
+        return $this->hasManyThrough(
+            Size::class,
+            ProductInventory::class,
+            'product_id',
+            'id',
+            'id',
+            'size_id'
+        );
+    }
 
     public function thumbnail(): Attribute
     {
         $url = asset('defaultProduct.webp');
+
         if ($this->media && Storage::exists($this->media->src)) {
             $url = Storage::url($this->media->src);
         }
+
         return Attribute::make(
             get: fn () => $url,
         );
