@@ -9,23 +9,27 @@ use Illuminate\Support\Str;
 class SubCategory extends Model
 {
     protected $guarded = ['id'];
+
     public function media(){
-        return $this->belongsTo(Media::class);
+        return $this->belongsTo(Media::class, 'media_id');
     }
+
     public function thumbnail(): Attribute
     {
         $src = asset('default.webp');
-        if ($this->media && Storage::exists($this->media->src)) {
-            $src = Storage::url($this->media->src);
+        if ($this->media && Storage::exists($this->media?->src)) {
+            $src = Storage::url($this->media?->src);
         }
         return Attribute::make(
             get: fn () => $src,
         );
     }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
+
     protected static function boot(){
         parent::boot();
         static::creating(function($subCategory){

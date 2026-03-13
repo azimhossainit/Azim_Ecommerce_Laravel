@@ -36,13 +36,12 @@ class ProductController extends Controller
     }
     public function show(Product $product)
     {
-        $productGalleries = $product->galleries->map(function ($media) {
+        $productGalleries = $product->galleries?->map(function ($media) {
             return [
                 'media_id' => $media->id,
-                'src' => $media->gallery_url,
+                'src' => Storage::url($media?->src),
             ];
         });
-
         return view('admin.product.show', compact('product', 'productGalleries'));
     }
     public function edit(Product $product){

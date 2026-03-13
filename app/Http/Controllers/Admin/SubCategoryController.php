@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SubCategoryRequest;
 use App\Repositories\MediaRepository;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class SubCategoryController extends Controller
 {
@@ -16,6 +17,7 @@ class SubCategoryController extends Controller
         $subCategories = SubCategory::latest('id')->get();
         return view('admin.subCategory.index', compact('subCategories', 'categories'));
     }
+
     public function store(SubCategoryRequest $request)
     {
         // Upload Image
@@ -28,33 +30,40 @@ class SubCategoryController extends Controller
             'name'        => $request->name,
             'slug'        => $request->slug ?? Str::slug($request->name),
             'category_id' => $request->category,
-            'media_id'   => null,
+            'media_id'   => $media?->id,
         ]);
         return to_route('subCategory.index')->withSuccess('SubCategory created successfully');
     }
-        public function edit(SubCategory $subCategory){
+
+    public function edit(SubCategory $subCategory){
         $categories = Category::latest('id')->get();
         return view('admin.subCategory.edit', compact('subCategory', 'categories'));
     }
-     public function update(SubCategoryRequest $request, SubCategory $subCategory)
+
+    public function update(SubCategoryRequest $request, SubCategory $subCategory)
     {
-        $media = $subCategory->media;
+
+        $media = $subCategory?->media;
+       
         if($request->hasFile('image')){
-            if($media && Storage::exists($media->src)){
+            if($media && Storage::exists($media?->src)){
                 $media = MediaRepository::updateByRequest($request->file('image'), 'subCategory', 'image', $media);
             }else{
                 $media = MediaRepository::storeByRequest($request->file('image'), 'subCategory', 'image');
             }
+        };
 
-            // TEXT DATA update
-    $subCategory->name        = $request->name;
-    $subCategory->slug        = $request->slug ?? Str::slug($request->name);
-    $subCategory->category_id = $request->category;
+        $slug = $request->slug ?? Str::slug($request->name);
+        $subCategory->update([
+            'name' => $request->name,
+            'slug' => $slug,
+            'category_id' => $request->category,
+            'media_id' => $media?->id,
+        ]);
 
-    $subCategory->save();  // ❗Important
 
-    return redirect()->route('subCategory.index')->withSuccess('SubCategory updated successfully');
-}
+        return redirect()->route('subCategory.index')->withSuccess('SubCategory updated successfully');
     }
 }
+
 

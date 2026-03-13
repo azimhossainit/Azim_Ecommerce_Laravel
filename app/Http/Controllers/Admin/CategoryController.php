@@ -34,6 +34,5 @@ class CategoryController extends Controller
         $category = CategoryRepository::updateByRequest($request, $category);
         return to_route('category.index')->withSuccess('Category updated successfully');
     }
-
     }
 // dd($request->all());  

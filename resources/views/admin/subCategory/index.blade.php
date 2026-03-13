@@ -23,7 +23,7 @@
                             <td>{{ $subCategory->category?->name }}</td>
                             <td>{{ $subCategory->name }}</td>
                             <td>{{ $subCategory->slug }}</td>
-                            <td class="text-center"><img src="{{ $subCategory->media }}" alt="" width="50"></td>
+                            <td class="text-center"><img src="{{ $subCategory->thumbnail }}" alt="" width="50"></td>
                             <td class="text-center">
                                 <a href="{{ route('subCategory.edit', $subCategory->id) }}" class="btn btn-danger btn-icon btn-md">
                                     <i data-lucide="edit"></i>
@@ -115,6 +115,3 @@ function validateImage(input) {
 @endpush
 @endsection
 
-function validateImage(input) {
-  text only  
-}

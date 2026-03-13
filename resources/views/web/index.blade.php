@@ -159,7 +159,7 @@
                                     <div class="tag new">New</div>
                                 </div>
                                 <div class="text">
-                                    <h2><a href="product-single.html">Wireless Headphones</a></h2>
+                                    <h2><a href="#">Wireless Headphones</a></h2>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -185,7 +185,7 @@
                                     <div class="tag sale">Sale</div>
                                 </div>
                                 <div class="text">
-                                    <h2><a href="product-single.html">Blue Bag with Lock</a></h2>
+                                    <h2><a href="#">Blue Bag with Lock</a></h2>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -211,7 +211,7 @@
                                     <div class="tag new">New</div>
                                 </div>
                                 <div class="text">
-                                    <h2><a href="product-single.html">Stylish Pink Top</a></h2>
+                                    <h2><a href="#">Stylish Pink Top</a></h2>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -237,7 +237,7 @@
                                     <div class="tag sale">Sale</div>
                                 </div>
                                 <div class="text">
-                                    <h2><a href="product-single.html">Brown Com Boots</a></h2>
+                                    <h2><a href="#">Brown Com Boots</a></h2>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -263,7 +263,7 @@
                                     <div class="tag new">New</div>
                                 </div>
                                 <div class="text">
-                                    <h2><a href="product-single.html">Winter Sweter</a></h2>
+                                    <h2><a href="#">Winter Sweter</a></h2>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -289,7 +289,7 @@
                                     <div class="tag sale">Sale</div>
                                 </div>
                                 <div class="text">
-                                    <h2><a href="product-single.html">Blue Kids Shoes</a></h2>
+                                    <h2><a href="#">Blue Kids Shoes</a></h2>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -315,7 +315,7 @@
                                     <div class="tag new">New</div>
                                 </div>
                                 <div class="text">
-                                    <h2><a href="product-single.html">Stylish Bag</a></h2>
+                                    <h2><a href="#">Stylish Bag</a></h2>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -341,7 +341,7 @@
                                     <div class="tag sale">Sale</div>
                                 </div>
                                 <div class="text">
-                                    <h2><a href="product-single.html">Finger Rings</a></h2>
+                                    <h2><a href="#">Finger Rings</a></h2>
                                     <div class="rating-product">
                                         <i class="fi flaticon-star"></i>
                                         <i class="fi flaticon-star"></i>
@@ -458,7 +458,7 @@
                                         <img src="{{ asset('web/assets/images/special-product-1.jpg')}}" alt="">
                                     </div>
                                     <div class="text">
-                                        <h2><a href="product-single.html">Jewelry Sets</a></h2>
+                                        <h2><a href="#">Jewelry Sets</a></h2>
                                         <div class="rating-product">
                                             <i class="fi flaticon-star"></i>
                                             <i class="fi flaticon-star"></i>

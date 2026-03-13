@@ -51,7 +51,7 @@
                                         <del class="old-price">$200.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                                         <del class="old-price">$190.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                                         <del class="old-price">$200.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
                                         <del class="old-price">$150.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +155,7 @@
                                         <del class="old-price">$130.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +181,7 @@
                                         <del class="old-price">$200.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +207,7 @@
                                         <del class="old-price">$200.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -233,13 +233,13 @@
                                         <del class="old-price">$130.00</del>
                                     </div>
                                     <div class="shop-btn">
-                                        <a class="theme-btn-s2" href="product.html">Shop Now</a>
+                                        <a class="theme-btn-s2" href="{{ route('shop') }}">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="more-btn">
-                            <a class="theme-btn-s2" href="product.html">Load More</a>
+                            <a class="theme-btn-s2" href="{{ route('shop') }}">Load More</a>
                         </div>
                     </div>
                 </div>
@@ -306,11 +306,11 @@
                                     <h3>Popular</h3>
                                 </div>
                                 <ul>
-                                    <li><a href="product.html">Men</a></li>
-                                    <li><a href="product.html">Women</a></li>
-                                    <li><a href="product.html">Kids</a></li>
-                                    <li><a href="product.html">Shoe</a></li>
-                                    <li><a href="product.html">Jewelry</a></li>
+                                    <li><a href="{{ route('shop') }}">Men</a></li>
+                                    <li><a href="{{ route('shop') }}">Women</a></li>
+                                    <li><a href="{{ route('shop') }}">Kids</a></li>
+                                    <li><a href="{{ route('shop') }}">Shoe</a></li>
+                                    <li><a href="{{ route('shop') }}">Jewelry</a></li>
                                 </ul>
                             </div>
                         </div>

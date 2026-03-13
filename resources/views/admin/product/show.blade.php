@@ -91,11 +91,9 @@
                                 <div class="col-sm-6 col-md-3 col-lg-2">
                                     <img src="{{ $gallery['src'] }}" alt="product gallery" class="w-100">
                                 </div>
-                            </div>
+                             @endforeach
                           </div>
                        </div>
-                            @endforeach
-                        </div>
                     </div>
                 </div>
             </div>
