@@ -166,7 +166,12 @@
                                 </div>
                             </li>
                             <li>
-                                
+
+                                @php
+                                    $cartItems = $user?->cartItems()->latest()->get();
+                                    $totalCartItems = $cartItems?->count();
+                                    $subTotal = 0;
+                                @endphp
                                 <div class="mini-cart">
                                     <button class="cart-toggle-btn"> <i class="fi flaticon-add-to-cart"></i>
                                         <span class="cart-count">{{ $totalCartItems ?? 0 }}</span></button>
@@ -175,16 +180,17 @@
                                         <div class="mini-cart-items">
                                             @foreach ($cartItems ?? [] as $cart)
                                                 @php
-                                                    $subTotal += $cart?->quantity * ($cart?->product?->discount_price > 0 ? $cart?->product?->discount_price : $cart?->product?->price);
+                                                $subTotal += $cart?->quantity * ($cart?->product?->discount_price > 0 ? $cart?->product?->discount_price : $cart?->product?->price);
                                                 @endphp
                                             <div class="mini-cart-item clearfix">
                                                 <div class="mini-cart-item-image">
                                                     <a href="{{ route('singleProduct', $cart?->product?->slug) }}"><img
-                                                            src="{{ $cart?->product?->thumbnail }}" alt=''></a>
+                                                        src="{{ $cart?->product?->thumbnail }}" alt=''></a>
                                                 </div>
                                                 <div class="mini-cart-item-des">
                                                     <a href="{{ route('singleProduct', $cart?->product?->slug) }}">{{$cart?->product?->name}}</a>
-                                                    <span class="mini-cart-item-price">${{ $cart?->product?->discount_price > 0 ? $cart?->product?->discount_price : $cart?->product?->price}} x {{ $cart?->quantity }}</span>
+                                                    <span class="mini-cart-item-price">${{ $cart?->product?->discount_price > 0 ? $cart?->product?->
+                                                        discount_price : $cart?->product?->price}} x {{ $cart?->quantity }}</span>
                                                     <span class="mini-cart-item-quantity"><a href="{{route('cart.delete', $cart?->id)}}"><i
                                                                 class="ti-close"></i></a></span>
                                                 </div>
