@@ -73,5 +73,10 @@ class HomeController extends Controller
         $productSizes = Size::whereIn('id', $SizeIds)->get();
         return view('web.singleProduct', compact('user', 'product', 'productColors', 'productSizes'));
     }
-
+public function cartDetails()
+    {
+        $user = auth('web')?->user();
+        $cartItems = $user->cartItems()->latest()->get();
+        return view('web.cartDetails', compact('user', 'cartItems'));
+    }
 }

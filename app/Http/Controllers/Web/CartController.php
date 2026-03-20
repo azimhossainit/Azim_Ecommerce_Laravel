@@ -37,5 +37,10 @@ class CartController extends Controller
         ]);
         return back()->withSuccess('Product added to cart successfully');
     }  
+    public function deleteCart(Cart $cart)
+    {
+        $cart->delete();
+        return back()->withSuccess('Product removed from cart successfully');
+    }
 }
 
