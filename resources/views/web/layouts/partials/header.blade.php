@@ -157,9 +157,8 @@
 
                                         </div>
                                         <div class="mini-cart-action clearfix">
-                                            <div class="mini-btn">
-                                                <a href="{{ route('wishlist.index')}}" class="view-cart-btn">View
-                                                    Wishlist</a>
+                                        <div class="mini-btn">
+                                        <a href="{{ route('wishlist.index')}}" class="view-cart-btn">View Wishlist</a>
                                             </div>
                                         </div>
                                     </div>
