@@ -1,18 +1,24 @@
 <?php
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\ProductController;     
-use App\Http\Controllers\Admin\InventoryController; 
-use App\Http\Controllers\Admin\ColorController;
+
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\Admin\ColorController;
+use App\Http\Controllers\Admin\CouponController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\InventoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SizeController;
+use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\TagController;
+use Illuminate\Support\Facades\Route;
+
 
 Route::prefix('admin')->group(function () {
-        Route::controller(DashboardController::class)->group(function () {
+
+    Route::controller(DashboardController::class)->group(function () {
         Route::get('/', 'index')->name('admin.root');
     });
+
     // category routes
     Route::controller(CategoryController::class)->group(function () {
         Route::get('/categories', 'index')->name('category.index');
@@ -20,15 +26,16 @@ Route::prefix('admin')->group(function () {
         Route::get('/category/{category}/edit/', 'edit')->name('category.edit');
         Route::put('/category/{category}/update/', 'update')->name('category.update');
     });
+
     // subCategory routes
-     Route::controller(SubCategoryController::class)->group(function () {
+    Route::controller(SubCategoryController::class)->group(function () {
         Route::get('/subCategories', 'index')->name('subCategory.index');
         Route::post('/subCategory/store', 'store')->name('subCategory.store');
         Route::get('/subCategory/{subCategory}/edit/', 'edit')->name('subCategory.edit');
         Route::put('/subCategory/{subCategory}/update/', 'update')->name('subCategory.update');
-        Route::resource('subCategory', SubCategoryController::class);
     });
-     // brand routes
+
+    // brand routes
     Route::controller(BrandController::class)->group(function () {
         Route::get('/brands', 'index')->name('brand.index');
         Route::post('/brand/store', 'store')->name('brand.store');
@@ -36,6 +43,7 @@ Route::prefix('admin')->group(function () {
         Route::put('/brand/{brand}/update/', 'update')->name('brand.update');
         Route::delete('/brand/{brand}/destroy', 'destroy')->name('brand.destroy');
     });
+
     // color routes
     Route::controller(ColorController::class)->group(function () {
         Route::get('/colors', 'index')->name('color.index');
@@ -44,6 +52,7 @@ Route::prefix('admin')->group(function () {
         Route::put('/color/{color}/update/', 'update')->name('color.update');
         Route::delete('/color/{color}/destroy', 'destroy')->name('color.destroy');
     });
+
     // size routes
     Route::controller(SizeController::class)->group(function () {
         Route::get('/sizes', 'index')->name('size.index');
@@ -54,11 +63,13 @@ Route::prefix('admin')->group(function () {
 
     // tags routes
     Route::controller(TagController::class)->group(function () {
-       Route::get('/tags', 'index')->name('tag.index');
-       Route::post('/tag/store', 'store')->name('tag.store');
-       Route::put('/tag/{tag}/update', 'update')->name('tag.update');
-       Route::delete('/tag/{tag}/destroy', 'destroy')->name('tag.destroy');
+        Route::get('/tags', 'index')->name('tag.index');
+        Route::post('/tag/store', 'store')->name('tag.store');
+        Route::put('/tag/{tag}/update', 'update')->name('tag.update');
+        Route::delete('/tag/{tag}/destroy', 'destroy')->name('tag.destroy');
     });
+
+
     // product routes
     Route::controller(ProductController::class)->group(function () {
         Route::get('/products', 'index')->name('product.index');
@@ -75,8 +86,15 @@ Route::prefix('admin')->group(function () {
     Route::controller(InventoryController::class)->group(function () {
         Route::get('/product/{product}/inventory', 'index')->name('product.inventory');
         Route::post('/product/{product}/inventory/store', 'store')->name('inventory.store');
-        Route::post('/inventory/{inventory}/update', 'update')->name('inventory.update');
+        Route::post('/product/{inventory}/update', 'update')->name('inventory.update');
+    });
+
+    // coupons routes
+    Route::controller(CouponController::class)->group(function () {
+        Route::get('/coupons', 'index')->name('coupon.index');
+        Route::post('/coupon/store', 'store')->name('coupon.store');
+        Route::get('/coupon/{coupon}/edit', 'edit')->name('coupon.edit');
+        Route::put('/coupon/{coupon}/update', 'update')->name('coupon.update');
+        Route::delete('/coupon/{coupon}/destroy', 'destroy')->name('coupon.destroy');
     });
 });
-
-    
